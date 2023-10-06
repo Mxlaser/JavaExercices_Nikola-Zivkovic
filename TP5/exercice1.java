@@ -5,13 +5,11 @@ public class exercice1 {
     public static void main(String[] args){
         generateArray objet = new generateArray();
         objet.generate(10,100);
-        System.out.print("Liste d'origine : ");
-        System.out.println(objet.getList());
-        ArrayList<Integer> liste = new ArrayList<>();
-        liste = objet.getList();
+        ArrayList<Integer> liste = objet.getList();
+        System.out.print("Liste d'origine : " + liste);
 
-        for(Integer i = 0; i < 10 - 1; i++){
-            for(Integer j = 0; j < 10 - i - 1; j++){
+        for(Integer i = 0; i < liste.size() - 1; i++){
+            for(Integer j = 0; j < liste.size() - i - 1; j++){
                 if(liste.get(j) > liste.get(j + 1)){
                     Integer temp = liste.get(j);
                     liste.set(j, liste.get(j + 1));
