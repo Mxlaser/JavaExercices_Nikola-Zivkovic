@@ -3,7 +3,7 @@ package generatearray;
 import java.util.Random;
 import java.util.ArrayList;
 public class generateArray {
-    public static ArrayList<Integer>list = new ArrayList<Integer>();
+    private static ArrayList<Integer>list = new ArrayList<Integer>();
     public static void generate(Integer taille, Integer nbMax){
         Random rand = new Random();
         for(Integer i = 0; i < taille; i++){
