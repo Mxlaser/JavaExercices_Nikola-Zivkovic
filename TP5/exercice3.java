@@ -1,22 +1,37 @@
 import generatearray.generateArray;
+import java.util.ArrayList;
+import java.util.Scanner;
 
-public class exercice1 {
+public class exercice3 {
     public static void main(String[] args){
         generateArray objet = new generateArray();
         objet.generate(10,100);
-        System.out.print("Liste d'origine : ");
-        System.out.println(objet.getList());
-
-        for(Integer i = 0; i < 10 - 1; i++){
-            for(Integer j = 0; j < 10 - i - 1; j++){
-                if(objet.list.get(j) > objet.list.get(j + 1)){
-                    Integer temp = objet.list.get(j);
-                    objet.list.set(j, objet.list.get(j + 1));
-                    objet.list.set(j + 1, temp);
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Integer> liste = new ArrayList<>();
+        liste = objet.getList();
+        System.out.println("Liste d'origine : " + liste);
+        
+        for(Integer i = 0; i < 5; i++){
+            System.out.println("Entrez un nombre : ");
+            Integer nouveauNum = scanner.nextInt();
+            if(nouveauNum >= 0){
+                objet.addItem(nouveauNum);
+            }
+            else{
+                System.out.println("Entrez un nombre ! : ");
+            }
+        }
+        liste = objet.getList();
+        System.out.println("Liste d'origine avec inputs : " + liste);
+        for(Integer i = 0; i < 15 - 1; i++){
+            for(Integer j = 0; j < 15 - i - 1; j++){
+                if(liste.get(j) < liste.get(j + 1)){
+                    Integer temp = liste.get(j);
+                    liste.set(j, liste.get(j + 1));
+                    liste.set(j + 1, temp);
                 }
             }
         }
-        System.out.print("Liste triée : ");
-        System.out.println(objet.getList());
+        System.out.println("Liste triée : " + liste);
     }
 }

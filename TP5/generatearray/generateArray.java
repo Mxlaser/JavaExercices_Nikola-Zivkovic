@@ -20,4 +20,7 @@ public class generateArray {
     public static ArrayList getList(){
         return list;
     }
+    public static void addItem(Integer item){
+        list.add(item);
+    }
 }
